@@ -60,8 +60,12 @@ reference/drive.md       ranking, atom briefs, merge train, loop feedback
 templates/               rubric / units / atom-brief starting points
 ```
 
-Reference implementation: [aneym/iris](https://github.com/aneym/iris) — the
-first product run entirely on this loop (readiness map, runs ledgers, neutral
-re-verifier, and a fleet of parallel lane agents).
+The method was distilled from a production system run entirely on this loop —
+readiness map, runs ledgers, a neutral re-verifier, and a fleet of parallel
+lane agents merging dozens of audited PRs a night. This repo also runs the
+method on itself: see `.atomic/` for its own units map and gap queue, and
+[CONTRIBUTING.md](CONTRIBUTING.md) for the PR contract (agents welcome).
+
+Update an install: `git -C ~/.claude/skills/atomic pull`
 
 MIT.

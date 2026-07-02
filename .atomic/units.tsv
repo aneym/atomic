@@ -1,0 +1,11 @@
+track	unit_id	title	seam_paths	metric_bar	status
+CORE	U1	Mode selection is unambiguous on any repo state	SKILL.md	1	active
+CORE	U2	Description auto-invokes on the phrases users actually type	SKILL.md		active
+CORE	U3	Non-negotiables are enforceable as written (each rule falsifiable)	SKILL.md		active
+REF	U1	Decompose guidance yields seam-disjoint units on first pass	reference/decompose.md		active
+REF	U2	Rubric guidance prevents fabricated greens by construction	reference/rubrics.md		active
+REF	U3	Harness guidance covers sandbox env completeness + fixture-state traps	reference/harness.md		active
+REF	U4	Drive guidance produces briefs a cold agent can execute unaided	reference/drive.md templates/atom-brief.md		active
+TPL	U1	Templates parse and validate (JSON/TSV well-formed, columns match docs)	templates/		active
+DIST	U1	Install + update path works from a clean machine	README.md CONTRIBUTING.md		active
+DIST	U2	Contribution contract yields mergeable atoms from outside agents	CONTRIBUTING.md		active

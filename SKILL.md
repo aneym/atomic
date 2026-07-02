@@ -14,9 +14,9 @@ atomic **units** with explicit seams, per-lane **readiness rubrics** scored by
 honest producers, a **hard-eval harness**, and a **drive loop** that always knows
 the next most valuable atom and emits a brief an agent can execute in isolation.
 
-Proven end to end on Iris (reference implementation: `aneym/iris` —
-`docs/reports/improvement-map/`, `docs/reference/readiness-scoring.md`,
-`docs/reference/trusted-self-grading.md`).
+Proven end to end in production (a job-search product run entirely on this
+loop). This repo applies the method to itself — `.atomic/` is its own units
+map and gap queue.
 
 ## Mode selection
 
