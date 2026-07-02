@@ -1,0 +1,64 @@
+{
+  "version": "r0.1",
+  "northStar": {
+    "title": "The end-to-end user outcome closes headlessly",
+    "countsFrom": "lanes at L2+"
+  },
+  "laneOrder": ["supply", "matching", "surfacing"],
+  "lanes": {
+    "supply": {
+      "criteria": [
+        {
+          "id": "SUPPLY-U1",
+          "title": "Recent-active pool freshness",
+          "rationale": "Users must never see stale dead inventory.",
+          "producer": {
+            "type": "command",
+            "run": "node scripts/readiness/freshness.mjs",
+            "metric": "fresh_share"
+          },
+          "threshold": { "op": "gte", "value": 0.9 },
+          "level": 2,
+          "weight": 1
+        },
+        {
+          "id": "SUPPLY-U2",
+          "title": "First-party link share",
+          "rationale": "Aggregator links waste the user's click and trust.",
+          "producer": {
+            "type": "unbuilt",
+            "note": "needs a link-resolution pass + classifier; see gap queue"
+          },
+          "threshold": { "op": "gte", "value": 0.6 },
+          "level": 2,
+          "weight": 1
+        }
+      ]
+    },
+    "SYSTEM": {
+      "criteria": [
+        {
+          "id": "SYS-1",
+          "title": "Every landing lane stamps a unit-keyed runs row",
+          "rationale": "Progress must be attributable to units or the map rots.",
+          "producer": {
+            "type": "runs-ledger",
+            "suite": "unit-runs",
+            "metric": "units_green_share"
+          },
+          "threshold": { "op": "gte", "value": 0.5 },
+          "level": 1,
+          "weight": 1
+        }
+      ]
+    }
+  },
+  "maturity": {
+    "L0": "exists",
+    "L1": "measured",
+    "L2": "gated",
+    "L3": "monitored",
+    "L4": "self-healing",
+    "rule": "a level is held only when every criterion at that level passes"
+  }
+}

@@ -1,0 +1,6 @@
+track	unit_id	title	seam_paths	metric_bar	status
+SUPPLY	U1	Pool has fresh inventory for every active user	src/sources/registry.ts src/sources/sync.ts	0.9	active
+SUPPLY	U2	Apply links resolve to the true first-party page	src/lib/urlClass.ts src/jobs/linkResolve.ts		active
+MATCH	U1	Hard gates never leak a disqualified job	src/matcher/gate.ts		active
+MATCH	U2	Ranked relevance beats the recency baseline	src/matcher/score.ts src/matcher/rank.ts		planned
+SHOW	U1	Every surfaced item carries complete reasons	src/surface/compile.ts		active
